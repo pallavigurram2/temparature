@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function main(){
+            let f=parseInt(document.getElementById('from').value);
+            let t=parseInt(document.getElementById('to').value);
+            if(f==1 && t==2){
+                celtofar();
+            }
+            if(f==1 && t==3){
+                celtokel();
+             }
+            if(f==2 && t==1){
+                fartocel();
+             }
+            if(f==2 && t==3){
+                fartokel()
+             }
+            if(f==3 && t==1){
+                keltocel();
+             }
+            if(f==3 && t==2){
+                keltofar();
+             }
+            if(f==1 && t==1){
+                celtocel();
+             }
+            if(f==2 && t==2){
+                fartofar();
+             }
+             if(f==3 && t==3){
+                keltokel();
+             }
+        }
+        function celtofar(){
+             let a=parseInt(document.getElementById('in').value);
+             let b=(a*(9/5)+32);
+             document.getElementById("out").value=b;
+        }
+        function celtokel(){
+            let a=parseInt(document.getElementById('in').value);
+            let b=a+273.15;
+            document.getElementById("out").value=b;
+        }
+        function fartocel(){
+            let a=parseInt(document.getElementById('in').value);
+            let b=((a-32)*(5/9));
+            document.getElementById("out").value=b;
+        }
+        function fartokel(){
+            let a=parseInt(document.getElementById('in').value);
+            let b=(a-32)*(5/9)+273.15;
+            document.getElementById("out").value=b;
+        }
+        function keltocel(){
+            let a=parseInt(document.getElementById('in').value);
+            let b=a-273.15;
+            document.getElementById("out").value=b;
+        }
+        function keltofar(){
+            let a=parseInt(document.getElementById('in').value);
+            let b=(a-273.15)*(9/5)+32;
+            document.getElementById("out").value=b;
+        }
+        function celtocel(){
+            let a=parseInt(document.getElementById('in').value);
+            document.getElementById("out").value=a;
+        }
+        function fartofar(){
+            let a=parseInt(document.getElementById('in').value);
+            document.getElementById("out").value=a;
+        }
+        function keltokel(){
+            let a=parseInt(document.getElementById('in').value);
+            document.getElementById("out").value=a;
+        }
+    </script>
+</head>
+<body>
+    <form action="./converter.html">
+        <center><div class="main">
+         <h1>Temperature converter</h1>
+         <br>
+         <label >From : </label>
+         <select id="from">
+            <option value="1">celcius</option>
+            <option value="2">faranheit</option>
+            <option value="3">kelvin</option>
+        </select>
+        
+        <input id="in" type="number" placeholder="input" required><br><br>
+        <label>To : </label>
+        <select id="to">
+            <option value="1">celcius</option>
+            <option value="2">faranheit</option>
+            <option value="3">kelvin</option>
+        </select>       
+        <input id="out" type="number"placeholder="output"readonly ><br><br><br>
+        <button class="reset">Reset</button>
+        <input type="button" class="con" value="convert"onclick="main()">
+    </div></center> 
+  </form>
+</body>
+</html>
